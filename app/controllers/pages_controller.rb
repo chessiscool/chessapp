@@ -1,6 +1,6 @@
-class PagesController < ApplicationController
+# frozen_string_literal: true
 
-  def index
-  end
-  
+# Pages class is the application root
+class PagesController < ApplicationController
+  def index; end
 end
