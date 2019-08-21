@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # frozen_string_literal: true
 
+=======
+>>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
 # Be sure to restart your server when you modify this file.
 
 # Define an application-wide content security policy
@@ -19,8 +22,12 @@
 # end
 
 # If you are using UJS then enable automatic nonce generation
+<<<<<<< HEAD
 # Rails.application.config.content_security_policy_nonce_generator = ->
 #   request { SecureRandom.base64(16) }
+=======
+# Rails.application.config.content_security_policy_nonce_generator = -> request { SecureRandom.base64(16) }
+>>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
 
 # Report CSP violations to a specified URI
 # For further information see the following documentation:
