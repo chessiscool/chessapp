@@ -12,5 +12,3 @@ AllCops:
   DisplayStyleGuide: true
   ExtraDetails: false
   TargetRubyVersion: 2.5
-
-  
