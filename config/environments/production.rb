@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # frozen_string_literal: true
 
 Rails.application.configure do
@@ -8,6 +9,13 @@ Rails.application.configure do
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+# frozen_string_literal: true
+
+Rails.application.configure do
+  # Settings specified here will take precedence over those in
+  # config/application.rb.
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -23,6 +31,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   # Ensures that a master key has been made available in either
   # ENV["RAILS_MASTER_KEY"] or in config/master.key. This key is used
   # to decrypt credentials (and other encrypted files).
@@ -30,6 +39,11 @@ Rails.application.configure do
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+  # Ensures that a master key has been made available in either
+  # ENV["RAILS_MASTER_KEY"] or in config/master.key. This key is used
+  # to decrypt credentials (and other encrypted files).
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
   # config.require_master_key = true
 
   # Disable serving static files from the `/public` folder by default since
@@ -44,11 +58,16 @@ Rails.application.configure do
   config.assets.compile = false
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   # `config.assets.precompile` and `config.assets.version` have moved to
   #  config/initializers/assets.rb
 =======
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+  # `config.assets.precompile` and `config.assets.version` have moved to
+  #  config/initializers/assets.rb
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
@@ -58,16 +77,22 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   # Store uploaded files on the local file system
   # (see config/storage.yml for options)
 =======
   # Store uploaded files on the local file system (see config/storage.yml for options)
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+  # Store uploaded files on the local file system
+  # (see config/storage.yml for options)
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
   config.active_storage.service = :local
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
+<<<<<<< HEAD
 <<<<<<< HEAD
   # config.action_cable.allowed_request_origins =
   #   [ 'http://example.com', /http:\/\/example.*/ ]
@@ -79,6 +104,13 @@ Rails.application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+  # config.action_cable.allowed_request_origins =
+  #   [ 'http://example.com', /http:\/\/example.*/ ]
+
+  # Force all access to the app over SSL, use Strict-Transport-Security,
+  # and use secure cookies.
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
   # config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
@@ -87,26 +119,36 @@ Rails.application.configure do
 
   # Prepend all log lines with the following tags.
 <<<<<<< HEAD
+<<<<<<< HEAD
   config.log_tags = [:request_id]
 =======
   config.log_tags = [ :request_id ]
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+  config.log_tags = [:request_id]
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   # Use a real queuing backend for Active Job
   # (and separate queues per environment)
 =======
   # Use a real queuing backend for Active Job (and separate queues per environment)
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+  # Use a real queuing backend for Active Job
+  # (and separate queues per environment)
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "chessapp_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
+<<<<<<< HEAD
 <<<<<<< HEAD
   # Set this to true and configure the email server for immediate delivery
   # to raise delivery errors.
@@ -117,6 +159,13 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+  # Set this to true and configure the email server for immediate delivery
+  # to raise delivery errors.
+  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options =
+    { host: 'https://chessapp-courtney-fink.herokuapp.com/' }
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -131,6 +180,7 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
 <<<<<<< HEAD
+<<<<<<< HEAD
   # config.logger =
   #   ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
@@ -140,6 +190,12 @@ Rails.application.configure do
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+  # config.logger =
+  #   ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)

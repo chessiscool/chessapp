@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # frozen_string_literal: true
 
 Rails.application.configure do
@@ -8,6 +9,13 @@ Rails.application.configure do
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+# frozen_string_literal: true
+
+Rails.application.configure do
+  # Settings specified here will take precedence over those in
+  # config/application.rb.
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -36,6 +44,7 @@ Rails.application.configure do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   # Store uploaded files on the local file system
   # (see config/storage.yml for options)
   config.active_storage.service = :local
@@ -49,6 +58,15 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+  # Store uploaded files on the local file system
+  # (see config/storage.yml for options)
+  config.active_storage.service = :local
+
+  # Setting up mailer to work with Devise
+  config.action_mailer.default_url_options = { host: 'localhost:3030' }
+
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false

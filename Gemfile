@@ -1,8 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # frozen_string_literal: true
 
 =======
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+# frozen_string_literal: true
+
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -43,6 +48,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
 <<<<<<< HEAD
+<<<<<<< HEAD
   # Call 'byebug' anywhere in the code to stop execution and get a
   # debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -58,14 +64,25 @@ group :development do
 =======
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+=======
+  # Call 'byebug' anywhere in the code to stop execution and get a
+  # debugger console
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  # Access an interactive console on exception pages or by
+  # calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
+<<<<<<< HEAD
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+  gem 'web-console', '>= 3.3.0'
+  # Spring speeds up development by keeping your application running in the
+  # background. Read more: https://github.com/rails/spring
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
@@ -80,6 +97,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'jquery-rails'
@@ -94,8 +114,11 @@ end
 gem 'devise'
 gem 'rubocop', require: false
 gem 'rubocop-rails'
+<<<<<<< HEAD
 
 gem 'simple_form'
 =======
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 >>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
+=======
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41

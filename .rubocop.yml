@@ -11,6 +11,10 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   ExtraDetails: false
+<<<<<<< HEAD
   TargetRubyVersion: 2.5
 
   
+=======
+  TargetRubyVersion: 2.5
+>>>>>>> 3e61dbe26a8e71d1481872f13e7fc6702703ee41
