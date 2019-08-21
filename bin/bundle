@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
+<<<<<<< HEAD
 # frozen_string_literal: true
 
+=======
+>>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
 load Gem.bin_path('bundler', 'bundle')

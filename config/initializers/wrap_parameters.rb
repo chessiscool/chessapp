@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 # frozen_string_literal: true
 
+=======
+>>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
 # Be sure to restart your server when you modify this file.
 
 # This file contains settings for ActionController::ParamsWrapper which
 # is enabled by default.
 
+<<<<<<< HEAD
 # Enable parameter wrapping for JSON. You can disable this by setting :format
 # to an empty array.
+=======
+# Enable parameter wrapping for JSON. You can disable this by setting :format to an empty array.
+>>>>>>> 762ea5f5c6f95f9adf39127e991b29cee37821c7
 ActiveSupport.on_load(:action_controller) do
   wrap_parameters format: [:json]
 end
