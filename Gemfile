@@ -80,3 +80,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'rubocop', require: false
 gem 'rubocop-rails'
+
+group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 3.5'
+end
