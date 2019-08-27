@@ -15,6 +15,10 @@ class GamesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+    @game = Game.show
+  end
+
   private
 
   def game_params
