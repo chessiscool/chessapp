@@ -12,12 +12,10 @@ class GamesController < ApplicationController
 
   def create
     Game.create(game_params)
-    redirect_to root_path
+    redirect_to game_path
   end
 
-  def show
-    @game = Game.show
-  end
+  def show; end
 
   private
 

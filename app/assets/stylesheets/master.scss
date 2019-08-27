@@ -9,12 +9,12 @@ h1{
 }
 .wrapper {
   border: 10px solid black;
-  width: 580px;
+  width: 620px;
   margin: 0 auto;
   display: grid;
   grid-gap: 0;
-  grid-template-columns: repeat(8, 70px);
-  grid-template-rows: repeat(8, 70px);
+  grid-template-columns: repeat(8, 75px);
+  grid-template-rows: repeat(8, 75px);
   grid-auto-flow: row;
 }
 

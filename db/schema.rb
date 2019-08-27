@@ -15,7 +15,7 @@
 # It's strongly recommended that you
 # check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_825_184_638) do
+ActiveRecord::Schema.define(version: 20_190_827_020_225) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20_190_825_184_638) do
     t.integer 'game_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.string 'type'
     t.index ['game_id'], name: 'index_pieces_on_game_id'
     t.index %w[x_position y_position player_id],
             name: 'index_pieces_on_x_position_and_y_position_and_player_id'
