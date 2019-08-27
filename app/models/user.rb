@@ -2,6 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :omniauthable, :omniauth_providers => [:facebook]
+  
+  has_many :games, dependent: :destroy
 
   def self.new_with_session(params, session)
     super.tap do |user|
