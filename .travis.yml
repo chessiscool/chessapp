@@ -1,0 +1,6 @@
+# Travis only runs builds on the commits you push after you’ve added a .travis.yml file. 
+
+language: ruby
+rvm:
+ - 2.2
+ - jruby
