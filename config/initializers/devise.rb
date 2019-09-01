@@ -316,4 +316,5 @@ Devise.setup do |config|
   # their password is changed. Defaults to true, so a user is signed
   # in automatically after changing a password.
   # config.sign_in_after_change_password = true
+  config.omniauth :facebook, "485451245621655", "f3dd20cb44c8fb0d212e81fabc6452c3", callback_url: "http://localhost:3030/users/auth/facebook/callback"
 end
