@@ -1,49 +1,99 @@
 class Board
 
+   coordinates x/y: 0 1  2      3  4  5      6  7
+               0  [0, 0, 0,     0, 0, 0,     0, 0],
+               1  [0, 0, 0,     0, 0, 0,     0, 0],
+               2  [0, 0, P1-Rook, 0, 0, 0,     0, 0],
+               3  [0, 0, 0,     0, 0, 0,     0, 0],
+               4  [0, 0, P1-Rook, 0, 0, P2-Rook, 0, 0],
+               5  [0, 0, 0,     0, 0, 0,     0, 0],
+               6  [0, 0, 0,     0, 0, 0,     0, 0],
+               7  [0, 0, P2-Rook, 0, 0, 0,     0, 0]
+
   def available_moves x, y
     horizontal_left x, y
     horizontal_right x, y
     vert_up x, y
     vert_down x, y
-    diagonal x, y
+    diagonal_up x, y
+    diagonal_down x, y
   end
 
-  def horizontal_left x, y
-    ((x-1)..7).each do |x_pos|
-
+  def occupied? x, y
+    game.pieces.where(x_position, y_position).present?
   end
 
-  def horizontal_right x, y
-
+  def check_path(x1, y1, x2, y2)
+    if y1 == y2
+      return 'horizontal'
+    elsif x1 == x2
+      return 'vertical'
+    else
+      @slope = (y2 - y1).to_f / (x2 - x1).to_f
+    end
   end
+      
 
-  def vert_up x, y
+  def is_obstructed?(desireddestination)
 
-  end
+    x1 = self.x_position
+    y1 = self.y_position
+    x2 = desireddestination[0]
+    y2 = desireddestination[1]
 
-  def vert_down x, y
+    #horizontal left
+    if line == 'horizontal' && x1 < x2
+      ((x+1)..7).each do |x_position|
+        return true if occupied?
+      end
+    end
 
-  end
+    #horizontal right
+    if line == 'horizontal' && x1 > x2
+      ((x-1)..7).each do |x_position|
+        return true if occupied?
+      end
+    end
 
-  def diagonal x, y
+    #verticaldown
+    if line == 'vertical' && y1 < y2
+      ((y-1)..7).each do |y_position|
+        return true if occupied?
+      end
+    end
 
+    #verticalup
+    if line == 'vertical' && y1 > y2
+      ((y+1)..7).each do |y_position|
+        return true if occupied?
+      end
+    end
+    if line == 'horizontal' || line == 'vertical'
+      return false
+    end
 
-#  def diagonal_check(desireddestination, currentlocation, otherpieceslocation, piecetype)
-#    puts
-#  end
+    #diagonaldown
+    if @slope.abs == 1.0 && x1 < x2
+      ((x-1)..7}.each do |x_position|
+        delta_y = x - x1
+        y = y2 > y1 ? y1 + delta_y : y1 - delta_y
+        return true if occupied?(x_position, y_position)
+      end
+    end
 
-#  def determine_piece_type_and_run_function(piecetype)
-#    if(piecetype=="knight")
-#      horizontal_check(1,2,3,4)
-#    elsif (piecetype=="king")
-#      vert_check(1,2,3,4)
-#    end
-#  end
+    #diagonalup
+    if @slope.abs == 1.0 && x1 > x2
+      ((x+1)..7).each do |x_position|
+        delta_y = x1 - x
+        y = y2 > y1 ? y1 + delta_y : y1 - delta_y
+        return true if occupied?(x_position, y_position)
+      end
+    end
 
-  def is_obstructed?
-
-  end
-
-#  determine_piece_type_and_run_function("king")
-
+    #not a straight line
+    if @slope.abs != 1.0
+      fail 'path is not a straight line'
+    else return false
+    end
+ 
 end
