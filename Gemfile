@@ -64,6 +64,9 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'jquery-rails'
@@ -85,3 +88,5 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.5'
 end
+
+gem 'omniauth-facebook'
