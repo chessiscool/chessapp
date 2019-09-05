@@ -1,14 +1,6 @@
 class Board
 
-   coordinates x/y: 0 1  2      3  4  5      6  7
-               0  [0, 0, 0,     0, 0, 0,     0, 0],
-               1  [0, 0, 0,     0, 0, 0,     0, 0],
-               2  [0, 0, P1-Rook, 0, 0, 0,     0, 0],
-               3  [0, 0, 0,     0, 0, 0,     0, 0],
-               4  [0, 0, P1-Rook, 0, 0, P2-Rook, 0, 0],
-               5  [0, 0, 0,     0, 0, 0,     0, 0],
-               6  [0, 0, 0,     0, 0, 0,     0, 0],
-               7  [0, 0, P2-Rook, 0, 0, 0,     0, 0]
+#coordinates
 
   def available_moves x, y
     horizontal_left x, y
@@ -19,7 +11,7 @@ class Board
     diagonal_down x, y
   end
 
-  def occupied? x, y
+  def occupied?(x, y)
     game.pieces.where(x_position, y_position).present?
   end
 
@@ -41,6 +33,7 @@ class Board
     x2 = desireddestination[0]
     y2 = desireddestination[1]
 
+    line = check_line(x1, y1, x2, y2)
     #horizontal left
     if line == 'horizontal' && x1 < x2
       ((x+1)..7).each do |x_position|
@@ -95,5 +88,5 @@ class Board
       fail 'path is not a straight line'
     else return false
     end
- 
+  end
 end
