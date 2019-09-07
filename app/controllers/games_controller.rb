@@ -2,6 +2,8 @@
 
 # Game controller enable the CRUD method
 class GamesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy] # rubocop:disable LineLength
+
   def index
     @game = Game.new
   end
@@ -11,11 +13,17 @@ class GamesController < ApplicationController
   end
 
   def create
-    Game.create(game_params)
-    redirect_to root_path
+    @game = current_user.games.create(game_params)
+    redirect_to game_path(@game)
   end
 
-  def show; end
+  def show
+    @game = Game.find_by_id(params[:id])
+    @pieces = @game.pieces
+  end
+
+  def update
+  end
 
   private
 
