@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Board class is defining the model associated with BoardsController
 class Board
   # coordinates
 
