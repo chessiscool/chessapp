@@ -12,11 +12,15 @@ class PiecesController < ApplicationController
 
   private
 
-	def piece_params
-		params.require(:piece).permit(:game_id, :user_id, :type, :x_position, :y_position)
-	end
+  def piece_params
+    params.require(:piece).permit(:game_id,
+                                  :user_id,
+                                  :type,
+                                  :x_position,
+                                  :y_position)
+  end
 
-	def current_game
-		@current_game ||= Game.find(params[:id])
-	end
+  def current_game
+    @current_game ||= Game.find(params[:id])
+  end
 end

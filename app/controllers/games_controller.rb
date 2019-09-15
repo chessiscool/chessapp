@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # Game controller enable the CRUD method
-class GamesController < ActiveRecord::Base
-  before_action :authenticate_user!, only: [:new, :create, :update, :show] # rubocop:disable LineLength
+class GamesController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create update show] # rubocop:disable LineLength
 
   def index
     @game = Game.new

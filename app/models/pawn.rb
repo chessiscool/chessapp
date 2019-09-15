@@ -3,5 +3,4 @@
 # Pawn class is defining the model associated with PiecesController
 # The Pawn class inherits from the Piece Class
 class Pawn < Piece
-
 end

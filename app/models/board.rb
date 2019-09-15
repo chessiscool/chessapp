@@ -27,7 +27,7 @@ class Board
     end
   end
 
-  def is_obstructed?(desireddestination)
+  def is_obstructed?(desireddestination) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, LineLength
     x1 = x_position
     y1 = y_position
     x2 = desireddestination[0]
