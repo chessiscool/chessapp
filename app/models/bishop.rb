@@ -3,5 +3,5 @@
 # Bishop class is defining the model associated with PiecesController
 # The Bishop class inherits from the Piece class
 class Bishop < Piece
-  belongs_to :piece
+
 end

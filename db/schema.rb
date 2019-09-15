@@ -25,11 +25,6 @@ ActiveRecord::Schema.define(version: 2019_08_29_195005) do
     t.index ["name"], name: "index_games_on_name"
   end
 
-  create_table "pawns", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "pieces", force: :cascade do |t|
     t.integer "x_position"
     t.integer "y_position"

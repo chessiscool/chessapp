@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Game controller enable the CRUD method
-class GamesController < ApplicationController
+class GamesController < ActiveRecord::Base
   before_action :authenticate_user!, only: [:new, :create, :update, :show] # rubocop:disable LineLength
 
   def index
@@ -13,8 +13,8 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create
-    @game.populate_board!
+    @game = Game.create(game_params)
+    @pieces = @game.pieces
     redirect_to game_path(@game)
   end
 
@@ -26,6 +26,10 @@ class GamesController < ApplicationController
   def update; end
 
   private
+
+  def game
+    @game ||= Game.where(id: params[:id]).last
+  end
 
   def game_params
     params.require(:game).permit(:name, :black_player_id, :white_player_id)

@@ -1,20 +1,13 @@
 # frozen_string_literal: true
 
 # Game class is defining the model associated with GamesController
-class Game < ApplicationRecord
+class Game < ActiveRecord::Base
   has_many :users, dependent: :destroy
   has_many :pieces
   scope :available, -> { where('white_player_id IS NULL or black_player_id IS NULL') } # rubocop:disable LineLength
 
   after_create :populate_board!
 
-  def contains_piece?(x_position, y_position)
-    if pieces.where('(x_position = ? AND y_position = ?)', x_position, y_position).any? # rubocop:disable LineLength
-      true
-    else
-      false
-    end
-  end
 
   def populate_board! # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     # WHITE PIECES
