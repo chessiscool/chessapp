@@ -2,13 +2,21 @@
 
 # Piece controller enable the CRUD method
 class PiecesController < ApplicationController
-  def new
-    @piece = Piece.new
-  end
-
   def create
-    @piece = Piece.create
+    @pieces = current_game.pieces.create(piece_params)
   end
 
-  def show; end
+  def show
+    @piece = Piece.find(params[:id])
+  end
+
+  private
+
+	def piece_params
+		params.require(:piece).permit(:game_id, :user_id, :type, :x_position, :y_position)
+	end
+
+	def current_game
+		@current_game ||= Game.find(params[:id])
+	end
 end
