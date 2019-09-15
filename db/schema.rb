@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 # This file is auto-generated from the current state of the database. Instead
@@ -13,10 +12,10 @@
 # (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you
-# check this file into your version control system.
+# It's strongly recommended that you check this file
+# into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_827_020_225) do
+ActiveRecord::Schema.define(version: 20_190_829_195_005) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -29,11 +28,6 @@ ActiveRecord::Schema.define(version: 20_190_827_020_225) do
     t.index %w[name black_player_id white_player_id],
             name: 'index_games_on_name_and_black_player_id_and_white_player_id'
     t.index ['name'], name: 'index_games_on_name'
-  end
-
-  create_table 'pawns', force: :cascade do |t|
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
   end
 
   create_table 'pieces', force: :cascade do |t|
@@ -58,13 +52,12 @@ ActiveRecord::Schema.define(version: 20_190_827_020_225) do
     t.datetime 'remember_created_at'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.string 'user_name', default: '', null: false
-    t.integer 'user_id', null: false
+    t.string 'provider'
+    t.string 'uid'
+    t.string 'name'
+    t.text 'image'
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'],
-            name: 'index_users_on_reset_password_token',
-            unique: true
-    t.index ['user_id'], name: 'index_users_on_user_id', unique: true
-    t.index ['user_name'], name: 'index_users_on_user_name', unique: true
+            name: 'index_users_on_reset_password_token', unique: true
   end
 end

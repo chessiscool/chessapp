@@ -1,40 +1,11 @@
 @import "bootstrap";
 
- body {
+body {
   margin: 40px;
 }
 
 h1{
-  text-align: center;	
-}
-.wrapper {
-  border: 10px solid black;
-  width: 620px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 0;
-  grid-template-columns: repeat(8, 75px);
-  grid-template-rows: repeat(8, 75px);
-  grid-auto-flow: row;
-}
-
-.box {
-  padding: 20px;
-  font-size: 150%;
-  background-color: black;
-  color: #000;
   text-align: center;
-}
-
-.box:nth-child(-2n+7), 
-.box:nth-child(9) ~ div:nth-child(-2n+16), 
-.box:nth-child(15) ~ div:nth-child(-2n+23), 
-.box:nth-child(24) ~ div:nth-child(-2n+32), 
-.box:nth-child(32) ~ div:nth-child(-2n+39), 
-.box:nth-child(40) ~ div:nth-child(-2n+48), 
-.box:nth-child(48) ~ div:nth-child(-2n+55), 
-.box:nth-child(57) ~ div:nth-child(-2n+64){
-  background-color: white;
 }
 
 .link {
