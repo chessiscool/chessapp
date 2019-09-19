@@ -5,7 +5,7 @@
 class King < Piece
   belongs_to :piece
 
-  def valid_move?(x_position, y_position)
+  def valid_move?(_x_position, _y_position)
     if diagonal_move?(x, y)
       return true if unoccupied?(x, y)
       return false if occupied_by_opposing_piece?(x, y) && piece_type == king
@@ -15,14 +15,10 @@ class King < Piece
       return false if occupied_by_opposing_piece?(x, y) && piece_type == king
 
     else horizontal_move?(x, y)
-      return true if unoccupied?(x, y)
-      return false if occupied_by_opposing_piece?(x, y) && piece_type == king
+         return true if unoccupied?(x, y)
+         return false if occupied_by_opposing_piece?(x, y) && piece_type == king
     end
   end
 
-  def capture
-
-  end
+  def capture; end
 end
-
-

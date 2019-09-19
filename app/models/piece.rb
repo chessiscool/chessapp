@@ -15,19 +15,20 @@ class Piece < ApplicationRecord
   def valid_move?(x, y)
     return false if is_obstructed?(x, y)
     return false if occupied_by_mycolor_piece?(x, y)
+
     within_chessboard?(x, y)
   end
 
   def self.piece_types
-    %w(Pawn Knight Bishop Rook Queen King)
+    %w[Pawn Knight Bishop Rook Queen King]
   end
 
   def within_chessboard?(x, y)
-    (x >= 0 && y >= 0 && x <= 7 && y <= 7 && x != nil && y != nil)
+    (x >= 0 && y >= 0 && x <= 7 && y <= 7 && !x.nil? && !y.nil?)
   end
 
   def space_occupied?(x, y)
-     game.pieces.where(x_position: x, y_position: y).present?
+    game.pieces.where(x_position: x, y_position: y).present?
   end
 
   def unoccupied?(x, y)
@@ -69,7 +70,7 @@ class Piece < ApplicationRecord
     false
   end
 
-  def vertical_obstruction(x_end, y_end)
+  def vertical_obstruction(_x_end, y_end)
     # path is vertical down
     if y_position < y_end
       (y_position + 1).upto(y_end - 1) do |y|
@@ -104,13 +105,12 @@ class Piece < ApplicationRecord
   end
 
   def is_obstructed?(x, y)
-
     x_end = x
     y_end = y
-    path = check_path(x_position, y_position, x_end, y_end) 
-      puts "YOURE IN THE IS OBSTUCTED FUNCITON AND BELOW IS FUNCTIOPN"
-      puts horizontal_obstruction?(2, 3)
-      puts "HERE IS A TEST"
+    path = check_path(x_position, y_position, x_end, y_end)
+    puts 'YOURE IN THE IS OBSTUCTED FUNCITON AND BELOW IS FUNCTIOPN'
+    puts horizontal_obstruction?(2, 3)
+    puts 'HERE IS A TEST'
 
     return horizontal_obstruction?(x_end, y_end) if path == 'horizontal'
 
@@ -122,17 +122,17 @@ class Piece < ApplicationRecord
   end
 
   def captured(x, y)
-    piece_at(x, y).update_attributes(x_position: nil, y_position: nil)
+    piece_at(x, y).update(x_position: nil, y_position: nil)
   end
 
   def update_location(x, y)
-    update_attributes(x_position: x, y_position: y)
+    update(x_position: x, y_position: y)
   end
 
-  def move_to!(new_x, new_y)
+  def move_to!(_new_x, _new_y)
     if valid_move?(x, y) && occupied_by_opposing_piece?(x, y)
       return captured(x, y)
-      return update_location(x, y)
+      update_location(x, y)
     end
   end
 end
