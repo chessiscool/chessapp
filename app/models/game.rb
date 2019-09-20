@@ -15,7 +15,8 @@ class Game < ApplicationRecord
       Pawn.create(game_id: id,
                   x_position: x_position,
                   y_position: 7,
-                  type: 'Pawn')
+                  type: 'Pawn',
+                  piece_type: 'pawn-white')
     end
 
     # Rooks
@@ -23,7 +24,8 @@ class Game < ApplicationRecord
       Rook.create(game_id: id,
                   x_position: x_position,
                   y_position: 8,
-                  type: 'Rook')
+                  type: 'Rook',
+                  piece_type: 'rook-white')
     end
 
     # Knights
@@ -31,7 +33,8 @@ class Game < ApplicationRecord
       Knight.create(game_id: id,
                     x_position: x_position,
                     y_position: 8,
-                    type: 'Knight')
+                    type: 'Knight',
+                    piece_type: 'knight-white')
     end
 
     # Bishops
@@ -39,20 +42,23 @@ class Game < ApplicationRecord
       Bishop.create(game_id: id,
                     x_position: x_position,
                     y_position: 8,
-                    type: 'Bishop')
+                    type: 'Bishop',
+                    piece_type: 'bishop-white')
     end
 
     # King
     King.create(game_id: id,
                 x_position: 5,
                 y_position: 8,
-                type: 'King')
+                type: 'King',
+                piece_type: 'king-white')
 
     # Queen
     Queen.create(game_id: id,
                  x_position: 4,
                  y_position: 8,
-                 type: 'Queen')
+                 type: 'Queen',
+                 piece_type: 'queen-white')
 
     # BLACK PIECES
     # Pawns
@@ -60,7 +66,8 @@ class Game < ApplicationRecord
       Pawn.create(game_id: id,
                   x_position: x_position,
                   y_position: 2,
-                  type: 'Pawn')
+                  type: 'Pawn',
+                  piece_type: 'pawn-black')
     end
 
     # Rooks
@@ -68,7 +75,8 @@ class Game < ApplicationRecord
       Rook.create(game_id: id,
                   x_position: x_position,
                   y_position: 1,
-                  type: 'Rook')
+                  type: 'Rook',
+                  piece_type: 'rook-black')
     end
 
     # Knights
@@ -76,7 +84,8 @@ class Game < ApplicationRecord
       Knight.create(game_id: id,
                     x_position: x_position,
                     y_position: 1,
-                    type: 'Knight')
+                    type: 'Knight',
+                    piece_type: 'knight-black')
     end
 
     # Bishops
@@ -84,19 +93,22 @@ class Game < ApplicationRecord
       Bishop.create(game_id: id,
                     x_position: x_position,
                     y_position: 1,
-                    type: 'Bishop')
+                    type: 'Bishop',
+                    piece_type: 'bishop-black')
     end
 
     # King
     King.create(game_id: id,
                 x_position: 5,
                 y_position: 1,
-                type: 'King')
+                type: 'King',
+                piece_type: 'king-black')
 
     # Queen
     Queen.create(game_id: id,
                  x_position: 4,
                  y_position: 1,
-                 type: 'Queen')
+                 type: 'Queen',
+                 piece_type: 'queen-black')
   end
 end
