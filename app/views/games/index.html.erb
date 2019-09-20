@@ -3,5 +3,5 @@
 <%= link_to 'Start at New Game', new_game_path %>
 <br />
 <% Game.available.each do |game| %>
-  <%= game.name %><br /><br />
+  <%= link_to game.name,  game_path(game) %><br /><br />
 <% end %>
