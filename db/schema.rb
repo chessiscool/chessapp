@@ -12,8 +12,8 @@
 # (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you
-# check this file into your version control system.
+# It's strongly recommended that you check this file
+# into your version control system.
 
 ActiveRecord::Schema.define(version: 20_190_829_195_005) do
   # These are extensions that must be enabled in order to support this database
@@ -28,11 +28,6 @@ ActiveRecord::Schema.define(version: 20_190_829_195_005) do
     t.index %w[name black_player_id white_player_id],
             name: 'index_games_on_name_and_black_player_id_and_white_player_id'
     t.index ['name'], name: 'index_games_on_name'
-  end
-
-  create_table 'pawns', force: :cascade do |t|
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
   end
 
   create_table 'pieces', force: :cascade do |t|
@@ -63,7 +58,6 @@ ActiveRecord::Schema.define(version: 20_190_829_195_005) do
     t.text 'image'
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'],
-            name: 'index_users_on_reset_password_token',
-            unique: true
+            name: 'index_users_on_reset_password_token', unique: true
   end
 end

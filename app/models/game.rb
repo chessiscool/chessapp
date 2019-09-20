@@ -8,67 +8,107 @@ class Game < ApplicationRecord
 
   after_create :populate_board!
 
-  def contains_piece?(x_position, y_position)
-    if pieces.where('(x_position = ? AND y_position = ?)', x_position, y_position).any? # rubocop:disable LineLength
-      true
-    else
-      false
-    end
-  end
-
   def populate_board! # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
     # WHITE PIECES
     # Pawns
     (1..8).each do |x_position|
-      Pawn.create(game_id: id, x_position: x_position, y_position: 7)
+      Pawn.create(game_id: id,
+                  x_position: x_position,
+                  y_position: 7,
+                  type: 'Pawn',
+                  piece_type: 'pawn-white')
     end
 
     # Rooks
     [1, 8].each do |x_position|
-      Rook.create(game_id: id, x_position: x_position, y_position: 8)
+      Rook.create(game_id: id,
+                  x_position: x_position,
+                  y_position: 8,
+                  type: 'Rook',
+                  piece_type: 'rook-white')
     end
 
     # Knights
     [2, 7].each do |x_position|
-      Knight.create(game_id: id, x_position: x_position, y_position: 8)
+      Knight.create(game_id: id,
+                    x_position: x_position,
+                    y_position: 8,
+                    type: 'Knight',
+                    piece_type: 'knight-white')
     end
 
     # Bishops
     [3, 6].each do |x_position|
-      Bishop.create(game_id: id, x_position: x_position, y_position: 8)
+      Bishop.create(game_id: id,
+                    x_position: x_position,
+                    y_position: 8,
+                    type: 'Bishop',
+                    piece_type: 'bishop-white')
     end
 
     # King
-    King.create(game_id: id, x_position: 5, y_position: 8)
+    King.create(game_id: id,
+                x_position: 5,
+                y_position: 8,
+                type: 'King',
+                piece_type: 'king-white')
 
     # Queen
-    Queen.create(game_id: id, x_position: 4, y_position: 8)
+    Queen.create(game_id: id,
+                 x_position: 4,
+                 y_position: 8,
+                 type: 'Queen',
+                 piece_type: 'queen-white')
 
     # BLACK PIECES
     # Pawns
     (1..8).each do |x_position|
-      Pawn.create(game_id: id, x_position: x_position, y_position: 2)
+      Pawn.create(game_id: id,
+                  x_position: x_position,
+                  y_position: 2,
+                  type: 'Pawn',
+                  piece_type: 'pawn-black')
     end
 
     # Rooks
     [1, 8].each do |x_position|
-      Rook.create(game_id: id, x_position: x_position, y_position: 1)
+      Rook.create(game_id: id,
+                  x_position: x_position,
+                  y_position: 1,
+                  type: 'Rook',
+                  piece_type: 'rook-black')
     end
 
     # Knights
     [2, 7].each do |x_position|
-      Knight.create(game_id: id, x_position: x_position, y_position: 1)
+      Knight.create(game_id: id,
+                    x_position: x_position,
+                    y_position: 1,
+                    type: 'Knight',
+                    piece_type: 'knight-black')
     end
 
     # Bishops
     [3, 6].each do |x_position|
-      Bishop.create(game_id: id, x_position: x_position, y_position: 1)
+      Bishop.create(game_id: id,
+                    x_position: x_position,
+                    y_position: 1,
+                    type: 'Bishop',
+                    piece_type: 'bishop-black')
     end
 
     # King
-    King.create(game_id: id, x_position: 5, y_position: 1)
+    King.create(game_id: id,
+                x_position: 5,
+                y_position: 1,
+                type: 'King',
+                piece_type: 'king-black')
 
     # Queen
-    Queen.create(game_id: id, x_position: 4, y_position: 1)
+    Queen.create(game_id: id,
+                 x_position: 4,
+                 y_position: 1,
+                 type: 'Queen',
+                 piece_type: 'queen-black')
   end
 end
