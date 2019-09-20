@@ -8,9 +8,8 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 2019_09_12_102400) do
+# It's strongly recommended that you check this file
+# into your version control system.
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,33 +24,34 @@ ActiveRecord::Schema.define(version: 2019_09_12_102400) do
     t.index ["name"], name: "index_games_on_name"
   end
 
-  create_table "pieces", force: :cascade do |t|
-    t.integer "x_position"
-    t.integer "y_position"
-    t.string "piece_type"
-    t.integer "player_id"
-    t.integer "game_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "type"
-    t.index ["game_id"], name: "index_pieces_on_game_id"
-    t.index ["x_position", "y_position", "player_id"], name: "index_pieces_on_x_position_and_y_position_and_player_id"
+  create_table 'pieces', force: :cascade do |t|
+    t.integer 'x_position'
+    t.integer 'y_position'
+    t.string 'piece_type'
+    t.integer 'player_id'
+    t.integer 'game_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'type'
+    t.index ['game_id'], name: 'index_pieces_on_game_id'
+    t.index %w[x_position y_position player_id],
+            name: 'index_pieces_on_x_position_and_y_position_and_player_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "provider"
-    t.string "uid"
-    t.string "name"
-    t.text "image"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'provider'
+    t.string 'uid'
+    t.string 'name'
+    t.text 'image'
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['reset_password_token'],
+            name: 'index_users_on_reset_password_token', unique: true
   end
-
 end
