@@ -12,7 +12,8 @@ class Game < ApplicationRecord
     # WHITE PIECES
     # Pawns
     (1..8).each do |x_position|
-      Pawn.create(game_id: id,
+      Pawn.create(piece_id: id,
+                  game_id: id,
                   x_position: x_position,
                   y_position: 7,
                   type: 'Pawn',
@@ -21,7 +22,8 @@ class Game < ApplicationRecord
 
     # Rooks
     [1, 8].each do |x_position|
-      Rook.create(game_id: id,
+      Rook.create(piece_id: id,
+                  game_id: id,
                   x_position: x_position,
                   y_position: 8,
                   type: 'Rook',
@@ -30,7 +32,8 @@ class Game < ApplicationRecord
 
     # Knights
     [2, 7].each do |x_position|
-      Knight.create(game_id: id,
+      Knight.create(piece_id: id,
+                    game_id: id,
                     x_position: x_position,
                     y_position: 8,
                     type: 'Knight',
@@ -39,7 +42,8 @@ class Game < ApplicationRecord
 
     # Bishops
     [3, 6].each do |x_position|
-      Bishop.create(game_id: id,
+      Bishop.create(piece_id: id,
+                    game_id: id,
                     x_position: x_position,
                     y_position: 8,
                     type: 'Bishop',
@@ -47,14 +51,16 @@ class Game < ApplicationRecord
     end
 
     # King
-    King.create(game_id: id,
+    King.create(piece_id: id,
+                game_id: id,
                 x_position: 5,
                 y_position: 8,
                 type: 'King',
                 piece_type: 'king-white')
 
     # Queen
-    Queen.create(game_id: id,
+    Queen.create(piece_id: id,
+                game_id: id,
                  x_position: 4,
                  y_position: 8,
                  type: 'Queen',
@@ -63,7 +69,8 @@ class Game < ApplicationRecord
     # BLACK PIECES
     # Pawns
     (1..8).each do |x_position|
-      Pawn.create(game_id: id,
+      Pawn.create(piece_id: id,
+                  game_id: id,
                   x_position: x_position,
                   y_position: 2,
                   type: 'Pawn',
@@ -72,7 +79,8 @@ class Game < ApplicationRecord
 
     # Rooks
     [1, 8].each do |x_position|
-      Rook.create(game_id: id,
+      Rook.create(piece_id: id,
+                  game_id: id,
                   x_position: x_position,
                   y_position: 1,
                   type: 'Rook',
@@ -81,7 +89,8 @@ class Game < ApplicationRecord
 
     # Knights
     [2, 7].each do |x_position|
-      Knight.create(game_id: id,
+      Knight.create(piece_id: id,
+                    game_id: id,
                     x_position: x_position,
                     y_position: 1,
                     type: 'Knight',
@@ -90,7 +99,8 @@ class Game < ApplicationRecord
 
     # Bishops
     [3, 6].each do |x_position|
-      Bishop.create(game_id: id,
+      Bishop.create(piece_id: id,
+                    game_id: id,
                     x_position: x_position,
                     y_position: 1,
                     type: 'Bishop',
@@ -98,14 +108,16 @@ class Game < ApplicationRecord
     end
 
     # King
-    King.create(game_id: id,
+    King.create(piece_id: id,
+                game_id: id,
                 x_position: 5,
                 y_position: 1,
                 type: 'King',
                 piece_type: 'king-black')
 
     # Queen
-    Queen.create(game_id: id,
+    Queen.create(piece_id: id,
+                 game_id: id,
                  x_position: 4,
                  y_position: 1,
                  type: 'Queen',

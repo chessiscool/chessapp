@@ -2,12 +2,14 @@
 
 # Piece controller enable the CRUD method
 class PiecesController < ApplicationController
+  before_action :current_game
+
   def create
     @pieces = current_game.pieces.create(piece_params)
   end
 
   def show
-    @piece = Piece.find(params[:id])
+    @piece = Piece.all
   end
 
   private
