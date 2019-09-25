@@ -3,7 +3,6 @@
 # Piece class is defining the model associated with PiecesController
 class Piece < ApplicationRecord
   belongs_to :game, dependent: :destroy
-
   def available_moves
     Game.all_board_coordinates.select do |coordinate_pair|
       valid_move?(coordinate_pair[0], coordinate_pair[1]) &&
@@ -134,5 +133,8 @@ class Piece < ApplicationRecord
       return captured(x, y)
       update_location(x, y)
     end
+
+  def update_piece(x, y)
+    update_attributes(x_position: x, y_position: y)
   end
 end

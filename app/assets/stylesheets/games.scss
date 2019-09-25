@@ -5,11 +5,12 @@
 
 .black-square {
   background: #999999;
-  width: 620px;
+  width: 670px;
 }
 
 .board {
-  width: 620px;
+  width: 670px;
+  height: 670px;
   margin: 20px auto;
   border-collapse: collapse;
   border: 15px solid #595959;
@@ -18,4 +19,12 @@
 td {
   width: 80px;
   height: 80px;
+}
+
+.piece {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 80%;
 }

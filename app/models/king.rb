@@ -3,8 +3,6 @@
 # King class is defining the model associated with PiecesController
 # The King class inherits from the Piece class
 class King < Piece
-  belongs_to :piece
-
   def valid_move?(_x_position, _y_position)
     if diagonal_move?(x, y)
       return true if unoccupied?(x, y)
@@ -19,6 +17,4 @@ class King < Piece
          return false if occupied_by_opposing_piece?(x, y) && piece_type == king
     end
   end
-
-  def capture; end
 end
