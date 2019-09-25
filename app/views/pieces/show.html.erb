@@ -10,22 +10,26 @@
     <tbody>
         <% (1..8).each do |y_position| %>
           <tr id = <%= y_position %>>
-            <% (1..8).each do |x_position| %>
-              <td data-x-position = <%= x_position %>
-              data-y-position = <%= y_position %>
-              class = <%= "#{(y_position % 2 == x_position % 2 ?
-                          "white-square droppable-square" :
-                          "black-square droppable-square")}" %> >
+              <% (1..8).each do |x_position| %>
+                
+                  <td data-x-position = <%= x_position %>
+                  data-y-position = <%= y_position %>
+                  class = <%= "#{(y_position % 2 == x_position % 2 ?
+                              "white-square droppable-square" :
+                              "black-square droppable-square")}" %> >
 
-              <%# selected and render_piece_id are helper methods defined in pieces_helper.rb %>
+                  <%# selected and render_piece_id are helper methods defined in pieces_helper.rb %>
+                  <%= link_to(@game) do %>
+                  <span class = 'pieces'>
+                    <% if selected(x_position, y_position) %>
+                      <%=  render_piece_id %>
+                    <% end %>     
 
-              <span class='pieces'>
-                <% if selected(x_position, y_position) %>
-                  <%=  render_piece_id %>
-                <% end %>     
-              </span>
+                  </span>
 
-              </td>
+
+                  </td>
+                <% end %>
             <% end %>
           </tr>
           
