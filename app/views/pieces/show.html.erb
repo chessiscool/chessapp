@@ -8,36 +8,46 @@
 <div class="board">
   <table>
     <tbody>
-        <% (1..8).each do |y_position| %>
-          <tr id = <%= y_position %>>
-              <% (1..8).each do |x_position| %>
+      <% (1..8).each do |y_position| %>
+        <tr id = <%= y_position %>>
+          <% (1..8).each do |x_position| %>
                 
-                  <td data-x-position = <%= x_position %>
-                  data-y-position = <%= y_position %>
-                  class = <%= "#{(y_position % 2 == x_position % 2 ?
-                              "white-square droppable-square" :
-                              "black-square droppable-square")}" %> >
-
+                  
+            <td data-x-position = <%= x_position %>
+                data-y-position = <%= y_position %>
+                class = <%= "#{(y_position % 2 == x_position % 2 ?
+                            "white-square droppable-square" :
+                            "black-square droppable-square")}" %> >
+              <%= link_to game_piece_path,  method: :patch, params: { x_position: x_position }.to_param do %>
+                  
+                <div class = 'clickable-square'>
                   <%# selected and render_piece_id are helper methods defined in pieces_helper.rb %>
-                  <%= link_to(@game) do %>
-                  <span class = 'pieces'>
-                    <% if selected(x_position, y_position) %>
-                      <%=  render_piece_id %>
-                    <% end %>     
-
-                  </span>
-
-
-                  </td>
-                <% end %>
-            <% end %>
-          </tr>
+                  <% if selected(x_position, y_position) %>
+                    <%= render_piece_id %>
+                  <% end %>     
+                            
+                        
+                </div>
+              <% end %>
+            </td>
+                
+          <% end %>
+        </tr>
           
       <% end %>
     </tbody>
   </table>
 </div>
 
+<%=
+  url = request.path.split('/').last
+  # uri = URI.parse(url)
+  # params = CGI.parse(uri.query)
+  # params is now {"id"=>["4"], "empid"=>["6"]}
+
+  # id     = uri['id'].first
+  url
+  %>
 
 <div class=link>
 	<%= link_to 'Sign In', new_user_session_path %>

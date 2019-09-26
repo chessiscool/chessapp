@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   # see http://guides.rubyonrails.org/routing.html
   root 'games#index'
   resources :games do
-    resources :pieces, only: :show
+    resources :pieces
   end
 end
