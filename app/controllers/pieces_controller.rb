@@ -15,9 +15,11 @@ class PiecesController < ApplicationController
   # updates the piece's x and y coordinates 
   def update
     @game = Game.find(params[:game_id])
-    @piece_id = request.path.split('/').last
-    @piece = @game.pieces.find_by(id: @piece_id).update_attributes(params[:x_position].to_h)
-    redirect_to game_path(current_game)
+    $piece_id = request.path.split('/').last
+    @piece = @game.pieces.find_by(id: $piece_id).update(params[:x_position].to_h)
+    @updated_x_piece = @game.pieces.find_by(id: $piece_id).read_attribute(:x_position)
+    @updated_y_piece = @game.pieces.find_by(id: $piece_id).read_attribute(:y_position)
+    redirect_to game_path(current_game, updated_x_piece: @updated_x_piece, updated_y_piece: @updated_y_piece)
   end
 
   private

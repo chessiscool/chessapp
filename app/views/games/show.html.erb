@@ -1,6 +1,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Chess</title>
+  <%# <script>
+    $(document).ready(function(){
+      $('td.droppable-square').on('click', function(e){
+        $(e.target).closest('.droppable-square').attr(data-x-position).val();
+        console.log($(e.target).closest('.droppable-square').attr(data-x-position).val());
+      });
+    });
+    
+  </script> %>
 </head>
 <body>
 <h1>Have Fun!</h1>
@@ -33,7 +42,7 @@
     </tbody>
   </table>
 </div>
-
+<%= update %>
 
 <div class=link>
 	<%= link_to 'Sign In', new_user_session_path %>

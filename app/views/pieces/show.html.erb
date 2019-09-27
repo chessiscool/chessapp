@@ -1,6 +1,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Chess</title>
+  
 </head>
 <body>
 <h1>Have Fun!</h1>
@@ -18,7 +19,7 @@
                 class = <%= "#{(y_position % 2 == x_position % 2 ?
                             "white-square droppable-square" :
                             "black-square droppable-square")}" %> >
-              <%= link_to game_piece_path,  method: :patch, params: { x_position: x_position }.to_param do %>
+              <%= link_to game_piece_path,  method: :patch, params: { x_position: x_position, y_position: y_position }.to_param do %>
                   
                 <div class = 'clickable-square'>
                   <%# selected and render_piece_id are helper methods defined in pieces_helper.rb %>
@@ -40,6 +41,7 @@
 </div>
 
 <%=
+  
   url = request.path.split('/').last
   # uri = URI.parse(url)
   # params = CGI.parse(uri.query)
@@ -47,6 +49,7 @@
 
   # id     = uri['id'].first
   url
+  
   %>
 
 <div class=link>

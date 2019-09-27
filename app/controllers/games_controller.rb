@@ -23,7 +23,12 @@ class GamesController < ApplicationController
     @pieces = @game.pieces
   end
 
-  def update; end
+  helper_method :update
+  def update
+    @piece_x = params[:updated_x_piece]
+    @piece_y = params[:updated_y_piece]
+    @piece = @game.pieces.find_by(params[:piece_id]).update(:x_position => :updated_x_piece, :y_position => :updated_y_piece)
+  end
 
   private
 
