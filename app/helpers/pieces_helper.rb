@@ -13,8 +13,9 @@ module PiecesHelper
 
   # finds squares that have pieces in them
   def selected(x_coord, y_coord)
-    @game = Game.find(params[:game_id])
+    @game = Game.find(params[:id])
     @piece = @game.pieces.where(x_position: x_coord, y_position: y_coord)
+    @piece_id = @piece.pluck(:id).first
     @piece.present?
   end
 

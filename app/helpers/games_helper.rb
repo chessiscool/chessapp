@@ -11,7 +11,9 @@ module GamesHelper
 
   def render_piece
     piece_image = @piece.pluck(:piece_type).first
-    link_to image_tag('pieces/' + piece_image + '.png', class: 'piece'), game_piece_path(game_id:@game, id:@piece_id)
+    link_to game_path, method: :put do
+      image_tag('pieces/' + piece_image + '.png', class: 'piece')
+    end
   end
 
 end

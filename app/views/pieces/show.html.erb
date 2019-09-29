@@ -19,7 +19,7 @@
                 class = <%= "#{(y_position % 2 == x_position % 2 ?
                             "white-square droppable-square" :
                             "black-square droppable-square")}" %> >
-              <%= link_to game_piece_path,  method: :patch, params: { x_position: x_position, y_position: y_position }.to_param do %>
+              <%= link_to piece_path, ({:x => x_position, :y => y_position}), method: :put do %>
                   
                 <div class = 'clickable-square'>
                   <%# selected and render_piece_id are helper methods defined in pieces_helper.rb %>
