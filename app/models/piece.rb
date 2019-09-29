@@ -133,7 +133,8 @@ class Piece < ApplicationRecord
       return captured(x, y)
       update_location(x, y)
     end
-
+  end
+  
   def update_piece(x, y)
     update_attributes(x_position: x, y_position: y)
   end
