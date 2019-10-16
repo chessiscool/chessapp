@@ -12,9 +12,6 @@ Worked on an Agile software development team building a chess application. Under
 * User Authentication: Devise gem and Omniauth gem
 
 ### Credits
-* Created by:
-** Courtney Fink
-** Zachary Bell
-** Sarah Crank
+* Created by: Zachary Bell, Sarah Crank, & Courtney Fink
 * Team Mentor: Juan Lavieri
 * [The Firehose Project](https://thefirehoseproject.com)
