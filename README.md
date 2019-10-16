@@ -1,24 +1,20 @@
-# README
+![](screenshot.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Chess Is Cool!
+Worked on an Agile software development team building a chess application. Under the guidance of a senior software engineer, we had weekly Agile team meetings for code reviews, sprint planning, and feature assignments.
 
-Things you may want to cover:
+### Build status
+[![Build Status](https://travis-ci.org/msarit/nomster.svg?branch=master)](https://travis-ci.org/msarit/nomster)
 
-* Ruby version
+### Features
+* Built on Rails
+* Leverages Javascript to dynamically move chess pieces
+* User Authentication: Devise gem and Omniauth gem
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Credits
+* Created by:
+** Courtney Fink
+** Zachary Bell
+** Sarah Crank
+* Team Mentor: Juan Lavieri
+* [The Firehose Project](https://thefirehoseproject.com)
